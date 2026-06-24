@@ -8,6 +8,22 @@ services:
       - cassandra_data:/var/lib/cassandra
     environment:
       CASSANDRA_CLUSTER_NAME: MoviesCluster
+  hbase:
+    image: dajobe/hbase
+    container_name: hbase-db
+    ports:
+      - "16000:16000"
+      - "16010:16010"
+      - "16020:16020"
+      - "16030:16030"
+      - "2181:2181"
+      - "8080:8080"
+      - "8085:8085"
+    environment:
+      - HBASE_CONF_hbase_rootdir=file:///hbase-data
+    volumes:
+      - hbase_data:/hbase-data
 
 volumes:
   cassandra_data:
+  hbase_data:
