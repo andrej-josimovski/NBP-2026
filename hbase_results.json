@@ -1,0 +1,399 @@
+{
+  "database": "HBase",
+  "runs": 5,
+  "limit": 50000,
+  "queries": [
+    {
+      "query": "Q1 — Филмови по жанр",
+      "param": "Action",
+      "avg_ms": 6695.49,
+      "min_ms": 5962.41,
+      "max_ms": 7719.33,
+      "total_ms": 33477.44,
+      "times": [
+        7719.33,
+        5962.41,
+        7069.21,
+        6045.83,
+        6680.67
+      ],
+      "count": 28755,
+      "note": "Row key prefix scan по genre -> оптимизиран range scan",
+      "sample": [
+        {
+          "title": "Too Extreme for TV!",
+          "vote_average": 10.0,
+          "year": "2003",
+          "director": "Bruce Sweeney"
+        },
+        {
+          "title": "Sprout",
+          "vote_average": 10.0,
+          "year": "2005",
+          "director": "D.W. Griffith"
+        },
+        {
+          "title": "Hi-Speed Sex",
+          "vote_average": 10.0,
+          "year": "2007",
+          "director": "Catherine Morshead"
+        },
+        {
+          "title": "Criminal Minds",
+          "vote_average": 10.0,
+          "year": "1998",
+          "director": "Onur Tukel"
+        },
+        {
+          "title": "Zero Woman: The Accused",
+          "vote_average": 10.0,
+          "year": "1996",
+          "director": "Jacques Baratier"
+        }
+      ]
+    },
+    {
+      "query": "Q2 — Филмови по година",
+      "param": 2015,
+      "avg_ms": 21729.56,
+      "min_ms": 19445.43,
+      "max_ms": 26785.24,
+      "total_ms": 108647.8,
+      "times": [
+        20328.83,
+        19445.43,
+        19842.31,
+        26785.24,
+        22246.0
+      ],
+      "count": 29361,
+      "note": "SingleColumnValueFilter на release_year -> full table scan, побавно",
+      "sample": [
+        {
+          "title": "9 Cream, 9 Sugar",
+          "vote_average": 10.0
+        },
+        {
+          "title": "Jetman Dubai : Young Feathers",
+          "vote_average": 10.0
+        },
+        {
+          "title": "Gennady Golovkin vs. Willie Monroe Jr",
+          "vote_average": 10.0
+        },
+        {
+          "title": "Odin's Afterbirth",
+          "vote_average": 10.0
+        },
+        {
+          "title": "Four Pillars of Basement",
+          "vote_average": 10.0
+        }
+      ]
+    },
+    {
+      "query": "Q3 — Филмови по јазик",
+      "param": "fr",
+      "avg_ms": 20081.41,
+      "min_ms": 17399.67,
+      "max_ms": 25988.3,
+      "total_ms": 100407.03,
+      "times": [
+        25988.3,
+        18621.99,
+        17399.67,
+        18402.82,
+        19994.25
+      ],
+      "count": 50000,
+      "note": "SingleColumnValueFilter на original_language -> full scan",
+      "sample": [
+        {
+          "title": "Marco Étoile Filante",
+          "vote_average": 10.0,
+          "year": "2008"
+        },
+        {
+          "title": "Apocalypse Snow",
+          "vote_average": 10.0,
+          "year": "1983"
+        },
+        {
+          "title": "La Cavale Epique De Paolo Zappa",
+          "vote_average": 10.0,
+          "year": "2006"
+        },
+        {
+          "title": "Hit and Run",
+          "vote_average": 10.0,
+          "year": "1959"
+        },
+        {
+          "title": "VALD - court métrage",
+          "vote_average": 10.0,
+          "year": "2007"
+        }
+      ]
+    },
+    {
+      "query": "Q4 — Топ по жанр + рејтинг",
+      "param": "Action > 7.0",
+      "avg_ms": 5865.28,
+      "min_ms": 5512.36,
+      "max_ms": 6099.99,
+      "total_ms": 29326.38,
+      "times": [
+        6099.99,
+        5512.36,
+        6001.12,
+        5783.1,
+        5929.8
+      ],
+      "count": 3145,
+      "note": "Prefix scan по genre + Python filter за vote_average > X",
+      "sample": [
+        {
+          "title": "Too Extreme for TV!",
+          "vote_average": 10.0,
+          "director": "Bruce Sweeney"
+        },
+        {
+          "title": "Sprout",
+          "vote_average": 10.0,
+          "director": "D.W. Griffith"
+        },
+        {
+          "title": "Hi-Speed Sex",
+          "vote_average": 10.0,
+          "director": "Catherine Morshead"
+        },
+        {
+          "title": "Criminal Minds",
+          "vote_average": 10.0,
+          "director": "Onur Tukel"
+        },
+        {
+          "title": "Zero Woman: The Accused",
+          "vote_average": 10.0,
+          "director": "Jacques Baratier"
+        }
+      ]
+    },
+    {
+      "query": "Q5 — Режисер + сортирање",
+      "param": "Christopher Nolan",
+      "avg_ms": 37.41,
+      "min_ms": 31.95,
+      "max_ms": 53.22,
+      "total_ms": 187.04,
+      "times": [
+        37.07,
+        53.22,
+        32.22,
+        32.58,
+        31.95
+      ],
+      "count": 149,
+      "note": "Row key prefix scan по director -> pre-sorted по popularity во row key",
+      "sample": [
+        {
+          "title": "Interstellar",
+          "year": "2014",
+          "vote_average": 8.417,
+          "popularity": 140.241
+        },
+        {
+          "title": "The Dark Knight",
+          "year": "2008",
+          "vote_average": 8.512,
+          "popularity": 130.643
+        },
+        {
+          "title": "Zootopia",
+          "year": "2016",
+          "vote_average": 7.748,
+          "popularity": 98.11
+        },
+        {
+          "title": "Inception",
+          "year": "2010",
+          "vote_average": 8.364,
+          "popularity": 83.952
+        },
+        {
+          "title": "The Dark Knight Rises",
+          "year": "2012",
+          "vote_average": 7.777,
+          "popularity": 76.914
+        }
+      ]
+    },
+    {
+      "query": "Q6 — Статус + јазик (SAFE)",
+      "param": "Released + en",
+      "avg_ms": 1125.05,
+      "min_ms": 980.8,
+      "max_ms": 1297.94,
+      "total_ms": 5625.26,
+      "times": [
+        1069.61,
+        997.98,
+        980.8,
+        1297.94,
+        1278.93
+      ],
+      "count": 2248,
+      "note": "SAFE version: limited scan + Python filtering (no FilterList crash)",
+      "sample": [
+        {
+          "title": "Too Extreme for TV!",
+          "vote_average": 10.0
+        },
+        {
+          "title": "Sprout",
+          "vote_average": 10.0
+        },
+        {
+          "title": "Hi-Speed Sex",
+          "vote_average": 10.0
+        },
+        {
+          "title": "Criminal Minds",
+          "vote_average": 10.0
+        },
+        {
+          "title": "Court of Lonely Royals",
+          "vote_average": 10.0
+        }
+      ]
+    },
+    {
+      "query": "Q7 — Просечен буџет/приход по жанр",
+      "param": "Drama",
+      "avg_ms": 36663.46,
+      "min_ms": 33919.82,
+      "max_ms": 40989.16,
+      "total_ms": 183317.32,
+      "times": [
+        35539.39,
+        33919.82,
+        35477.89,
+        37391.08,
+        40989.16
+      ],
+      "count": 2956,
+      "avg_budget": 11659706.06,
+      "avg_revenue": 30560455.52,
+      "note": "Prefix scan по genre + Python агрегација (нема GROUP BY во HBase)"
+    },
+    {
+      "query": "Q8 — Број по година и јазик (SAFE)",
+      "param": "2010 + en",
+      "avg_ms": 1362.39,
+      "min_ms": 1164.64,
+      "max_ms": 1752.46,
+      "total_ms": 6811.96,
+      "times": [
+        1194.85,
+        1164.64,
+        1364.09,
+        1335.93,
+        1752.46
+      ],
+      "count": 46,
+      "note": "SAFE version: limited scan + Python filtering (no FilterList crash)",
+      "sample": [
+        {
+          "title": "WWE: Satan's Prison - The Anthology of the Elimination Chamber",
+          "vote_average": 10.0
+        },
+        {
+          "title": "Two Soldiers",
+          "vote_average": 10.0
+        },
+        {
+          "title": "Action World",
+          "vote_average": 10.0
+        },
+        {
+          "title": "God of War III",
+          "vote_average": 10.0
+        },
+        {
+          "title": "Satan Claus",
+          "vote_average": 9.0
+        }
+      ]
+    },
+    {
+      "query": "Q9 — Топ режисери по рејтинг",
+      "param": "top 10, min 3 movies",
+      "avg_ms": 49090.39,
+      "min_ms": 43704.77,
+      "max_ms": 54012.79,
+      "total_ms": 245451.95,
+      "times": [
+        51871.74,
+        52091.91,
+        54012.79,
+        43704.77,
+        43770.74
+      ],
+      "count": 10,
+      "note": "Full scan + Python GROUP BY + sort (нема GROUP BY во HBase)",
+      "sample": [
+        {
+          "director": "Amy Scott",
+          "avg_rating": 8.67,
+          "movie_count": 3
+        },
+        {
+          "director": "Alireza Keymanesh, Amir Pousti",
+          "avg_rating": 8.17,
+          "movie_count": 3
+        },
+        {
+          "director": "Amma Rajasekhar",
+          "avg_rating": 8.0,
+          "movie_count": 3
+        },
+        {
+          "director": "Ahmed Saqr, Ramy Imam",
+          "avg_rating": 7.84,
+          "movie_count": 7
+        },
+        {
+          "director": "Aaron Woodley",
+          "avg_rating": 7.76,
+          "movie_count": 6
+        },
+        {
+          "director": "Alfie Sadler",
+          "avg_rating": 7.67,
+          "movie_count": 3
+        },
+        {
+          "director": "Abby Tarpey",
+          "avg_rating": 7.53,
+          "movie_count": 3
+        },
+        {
+          "director": "Aleksandr Strizhenov",
+          "avg_rating": 7.53,
+          "movie_count": 3
+        },
+        {
+          "director": "Alec Mills",
+          "avg_rating": 7.43,
+          "movie_count": 3
+        },
+        {
+          "director": "Alix Delaporte",
+          "avg_rating": 7.33,
+          "movie_count": 3
+        }
+      ]
+    }
+  ],
+  "total_execution_ms": 713522.89
+}
