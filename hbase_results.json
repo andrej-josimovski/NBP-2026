@@ -6,394 +6,379 @@
     {
       "query": "Q1 — Филмови по жанр",
       "param": "Action",
-      "avg_ms": 6695.49,
-      "min_ms": 5962.41,
-      "max_ms": 7719.33,
-      "total_ms": 33477.44,
+      "avg_ms": 4205.18,
+      "min_ms": 3593.76,
+      "max_ms": 5289.14,
+      "total_ms": 21025.92,
       "times": [
-        7719.33,
-        5962.41,
-        7069.21,
-        6045.83,
-        6680.67
+        5289.14,
+        3996.78,
+        3593.76,
+        3928.64,
+        4217.61
       ],
-      "count": 28755,
-      "note": "Row key prefix scan по genre -> оптимизиран range scan",
+      "count": 4694,
+      "note": "Prefix scan по genre + филтер по споделени ID-а",
       "sample": [
         {
-          "title": "Too Extreme for TV!",
-          "vote_average": 10.0,
-          "year": "2003",
-          "director": "Bruce Sweeney"
+          "title": "Zero Zone",
+          "vote_average": 8.8,
+          "year": "2020"
         },
         {
-          "title": "Sprout",
-          "vote_average": 10.0,
-          "year": "2005",
-          "director": "D.W. Griffith"
+          "title": "Top Guns",
+          "vote_average": 8.7,
+          "year": "2011"
         },
         {
-          "title": "Hi-Speed Sex",
-          "vote_average": 10.0,
-          "year": "2007",
-          "director": "Catherine Morshead"
+          "title": "WWE WrestleMania X-Seven",
+          "vote_average": 8.7,
+          "year": "2001"
         },
         {
-          "title": "Criminal Minds",
-          "vote_average": 10.0,
-          "year": "1998",
-          "director": "Onur Tukel"
+          "title": "WWE Wrestlemania XIX",
+          "vote_average": 8.6,
+          "year": "2003"
         },
         {
-          "title": "Zero Woman: The Accused",
-          "vote_average": 10.0,
-          "year": "1996",
-          "director": "Jacques Baratier"
+          "title": "WWE Royal Rumble 2021",
+          "vote_average": 8.583,
+          "year": "2021"
         }
       ]
     },
     {
       "query": "Q2 — Филмови по година",
       "param": 2015,
-      "avg_ms": 21729.56,
-      "min_ms": 19445.43,
-      "max_ms": 26785.24,
-      "total_ms": 108647.8,
+      "avg_ms": 16027.21,
+      "min_ms": 11434.39,
+      "max_ms": 30704.96,
+      "total_ms": 80136.04,
       "times": [
-        20328.83,
-        19445.43,
-        19842.31,
-        26785.24,
-        22246.0
+        30704.96,
+        14026.55,
+        11434.39,
+        12245.87,
+        11724.27
       ],
-      "count": 29361,
-      "note": "SingleColumnValueFilter на release_year -> full table scan, побавно",
+      "count": 1886,
+      "note": "SingleColumnValueFilter + филтер по споделени ID-а",
       "sample": [
         {
-          "title": "9 Cream, 9 Sugar",
-          "vote_average": 10.0
+          "title": "The Boy and the Beast",
+          "vote_average": 7.998
         },
         {
-          "title": "Jetman Dubai : Young Feathers",
-          "vote_average": 10.0
+          "title": "WWE WrestleMania 31",
+          "vote_average": 7.951
         },
         {
-          "title": "Gennady Golovkin vs. Willie Monroe Jr",
-          "vote_average": 10.0
+          "title": "One Piece: Adventure of Nebulandia",
+          "vote_average": 7.7
         },
         {
-          "title": "Odin's Afterbirth",
-          "vote_average": 10.0
+          "title": "The Tiger",
+          "vote_average": 7.631
         },
         {
-          "title": "Four Pillars of Basement",
-          "vote_average": 10.0
+          "title": "Mad Max: Fury Road",
+          "vote_average": 7.582
         }
       ]
     },
     {
       "query": "Q3 — Филмови по јазик",
       "param": "fr",
-      "avg_ms": 20081.41,
-      "min_ms": 17399.67,
-      "max_ms": 25988.3,
-      "total_ms": 100407.03,
+      "avg_ms": 15453.03,
+      "min_ms": 14745.75,
+      "max_ms": 16332.74,
+      "total_ms": 77265.16,
       "times": [
-        25988.3,
-        18621.99,
-        17399.67,
-        18402.82,
-        19994.25
+        15401.67,
+        14929.08,
+        14745.75,
+        15855.92,
+        16332.74
       ],
-      "count": 50000,
-      "note": "SingleColumnValueFilter на original_language -> full scan",
+      "count": 4198,
+      "note": "SingleColumnValueFilter + филтер по споделени ID-а",
       "sample": [
         {
-          "title": "Marco Étoile Filante",
-          "vote_average": 10.0,
-          "year": "2008"
+          "title": "Stop-and-Cop Interactive",
+          "vote_average": 8.5,
+          "year": "2009"
         },
         {
-          "title": "Apocalypse Snow",
-          "vote_average": 10.0,
-          "year": "1983"
+          "title": "OSS 117: Panic in Bangkok",
+          "vote_average": 8.4,
+          "year": "1964"
         },
         {
-          "title": "La Cavale Epique De Paolo Zappa",
-          "vote_average": 10.0,
-          "year": "2006"
+          "title": "OSS 117: Mission for a Killer",
+          "vote_average": 8.268,
+          "year": "1965"
         },
         {
-          "title": "Hit and Run",
-          "vote_average": 10.0,
-          "year": "1959"
+          "title": "Crooks in Clover",
+          "vote_average": 7.784,
+          "year": "1963"
         },
         {
-          "title": "VALD - court métrage",
-          "vote_average": 10.0,
-          "year": "2007"
+          "title": "Le Deuxième Souffle",
+          "vote_average": 7.6,
+          "year": "1966"
         }
       ]
     },
     {
       "query": "Q4 — Топ по жанр + рејтинг",
       "param": "Action > 7.0",
-      "avg_ms": 5865.28,
-      "min_ms": 5512.36,
-      "max_ms": 6099.99,
-      "total_ms": 29326.38,
+      "avg_ms": 4413.77,
+      "min_ms": 3954.63,
+      "max_ms": 4868.31,
+      "total_ms": 22068.87,
       "times": [
-        6099.99,
-        5512.36,
-        6001.12,
-        5783.1,
-        5929.8
+        3954.63,
+        4535.5,
+        4189.7,
+        4868.31,
+        4520.73
       ],
-      "count": 3145,
-      "note": "Prefix scan по genre + Python filter за vote_average > X",
+      "count": 726,
+      "note": "Prefix scan + Python filter + споделени ID-а",
       "sample": [
         {
-          "title": "Too Extreme for TV!",
-          "vote_average": 10.0,
-          "director": "Bruce Sweeney"
+          "title": "Zero Zone",
+          "vote_average": 8.8
         },
         {
-          "title": "Sprout",
-          "vote_average": 10.0,
-          "director": "D.W. Griffith"
+          "title": "Top Guns",
+          "vote_average": 8.7
         },
         {
-          "title": "Hi-Speed Sex",
-          "vote_average": 10.0,
-          "director": "Catherine Morshead"
+          "title": "WWE WrestleMania X-Seven",
+          "vote_average": 8.7
         },
         {
-          "title": "Criminal Minds",
-          "vote_average": 10.0,
-          "director": "Onur Tukel"
+          "title": "WWE Wrestlemania XIX",
+          "vote_average": 8.6
         },
         {
-          "title": "Zero Woman: The Accused",
-          "vote_average": 10.0,
-          "director": "Jacques Baratier"
+          "title": "WWE Royal Rumble 2021",
+          "vote_average": 8.583
         }
       ]
     },
     {
       "query": "Q5 — Режисер + сортирање",
       "param": "Christopher Nolan",
-      "avg_ms": 37.41,
-      "min_ms": 31.95,
-      "max_ms": 53.22,
-      "total_ms": 187.04,
+      "avg_ms": 28.52,
+      "min_ms": 18.96,
+      "max_ms": 51.13,
+      "total_ms": 142.59,
       "times": [
-        37.07,
-        53.22,
-        32.22,
-        32.58,
-        31.95
+        51.13,
+        18.96,
+        23.44,
+        24.66,
+        24.39
       ],
-      "count": 149,
-      "note": "Row key prefix scan по director -> pre-sorted по popularity во row key",
+      "count": 22,
+      "note": "Prefix scan по director → pre-sorted по popularity",
       "sample": [
         {
           "title": "Interstellar",
           "year": "2014",
-          "vote_average": 8.417,
-          "popularity": 140.241
+          "vote_average": 8.417
         },
         {
           "title": "The Dark Knight",
           "year": "2008",
-          "vote_average": 8.512,
-          "popularity": 130.643
+          "vote_average": 8.512
         },
         {
           "title": "Zootopia",
           "year": "2016",
-          "vote_average": 7.748,
-          "popularity": 98.11
+          "vote_average": 7.748
         },
         {
           "title": "Inception",
           "year": "2010",
-          "vote_average": 8.364,
-          "popularity": 83.952
+          "vote_average": 8.364
         },
         {
           "title": "The Dark Knight Rises",
           "year": "2012",
-          "vote_average": 7.777,
-          "popularity": 76.914
+          "vote_average": 7.777
         }
       ]
     },
     {
-      "query": "Q6 — Статус + јазик (SAFE)",
+      "query": "Q6 — Статус + јазик",
       "param": "Released + en",
-      "avg_ms": 1125.05,
-      "min_ms": 980.8,
-      "max_ms": 1297.94,
-      "total_ms": 5625.26,
+      "avg_ms": 143277.41,
+      "min_ms": 140607.3,
+      "max_ms": 146151.92,
+      "total_ms": 716387.05,
       "times": [
-        1069.61,
-        997.98,
-        980.8,
-        1297.94,
-        1278.93
+        140607.3,
+        142405.15,
+        146151.92,
+        143909.61,
+        143313.08
       ],
-      "count": 2248,
-      "note": "SAFE version: limited scan + Python filtering (no FilterList crash)",
+      "count": 30209,
+      "note": "Full scan + Python filter по status и language + споделени ID-а",
       "sample": [
         {
-          "title": "Too Extreme for TV!",
-          "vote_average": 10.0
+          "title": "Top Guns",
+          "vote_average": 8.7
         },
         {
-          "title": "Sprout",
-          "vote_average": 10.0
+          "title": "WWE WrestleMania X-Seven",
+          "vote_average": 8.7
         },
         {
-          "title": "Hi-Speed Sex",
-          "vote_average": 10.0
+          "title": "WWE Wrestlemania XIX",
+          "vote_average": 8.6
         },
         {
-          "title": "Criminal Minds",
-          "vote_average": 10.0
+          "title": "WWE Royal Rumble 2021",
+          "vote_average": 8.583
         },
         {
-          "title": "Court of Lonely Royals",
-          "vote_average": 10.0
+          "title": "WWE WrestleMania XX",
+          "vote_average": 8.489
         }
       ]
     },
     {
       "query": "Q7 — Просечен буџет/приход по жанр",
       "param": "Drama",
-      "avg_ms": 36663.46,
-      "min_ms": 33919.82,
-      "max_ms": 40989.16,
-      "total_ms": 183317.32,
+      "avg_ms": 20752.01,
+      "min_ms": 19736.85,
+      "max_ms": 22749.52,
+      "total_ms": 103760.05,
       "times": [
-        35539.39,
-        33919.82,
-        35477.89,
-        37391.08,
-        40989.16
+        20498.16,
+        22749.52,
+        19736.85,
+        19827.55,
+        20947.97
       ],
-      "count": 2956,
-      "avg_budget": 11659706.06,
-      "avg_revenue": 30560455.52,
-      "note": "Prefix scan по genre + Python агрегација (нема GROUP BY во HBase)"
+      "count": 1944,
+      "avg_budget": 17124843.55,
+      "avg_revenue": 42354325.04,
+      "note": "Prefix scan + Python агрегација + споделени ID-а"
     },
     {
-      "query": "Q8 — Број по година и јазик (SAFE)",
+      "query": "Q8 — Број по година и јазик",
       "param": "2010 + en",
-      "avg_ms": 1362.39,
-      "min_ms": 1164.64,
-      "max_ms": 1752.46,
-      "total_ms": 6811.96,
+      "avg_ms": 142910.81,
+      "min_ms": 139461.37,
+      "max_ms": 149775.4,
+      "total_ms": 714554.07,
       "times": [
-        1194.85,
-        1164.64,
-        1364.09,
-        1335.93,
-        1752.46
+        140828.85,
+        140889.25,
+        139461.37,
+        143599.19,
+        149775.4
       ],
-      "count": 46,
-      "note": "SAFE version: limited scan + Python filtering (no FilterList crash)",
+      "count": 746,
+      "note": "Full scan + Python filter по година и јазик + споделени ID-а",
       "sample": [
         {
-          "title": "WWE: Satan's Prison - The Anthology of the Elimination Chamber",
-          "vote_average": 10.0
+          "title": "WWE Royal Rumble 2010",
+          "vote_average": 8.0
         },
         {
-          "title": "Two Soldiers",
-          "vote_average": 10.0
+          "title": "WWE Wrestlemania XXVI",
+          "vote_average": 7.8
         },
         {
-          "title": "Action World",
-          "vote_average": 10.0
+          "title": "Undisputed III: Redemption",
+          "vote_average": 7.572
         },
         {
-          "title": "God of War III",
-          "vote_average": 10.0
+          "title": "Scott Pilgrim vs. the World",
+          "vote_average": 7.469
         },
         {
-          "title": "Satan Claus",
-          "vote_average": 9.0
+          "title": "Justice League: Crisis on Two Earths",
+          "vote_average": 7.303
         }
       ]
     },
     {
       "query": "Q9 — Топ режисери по рејтинг",
-      "param": "top 10, min 3 movies",
-      "avg_ms": 49090.39,
-      "min_ms": 43704.77,
-      "max_ms": 54012.79,
-      "total_ms": 245451.95,
+      "param": "top 10, min 3",
+      "avg_ms": 112534.55,
+      "min_ms": 108086.35,
+      "max_ms": 121086.8,
+      "total_ms": 562672.77,
       "times": [
-        51871.74,
-        52091.91,
-        54012.79,
-        43704.77,
-        43770.74
+        109993.6,
+        112998.38,
+        110507.65,
+        108086.35,
+        121086.8
       ],
       "count": 10,
-      "note": "Full scan + Python GROUP BY + sort (нема GROUP BY во HBase)",
+      "note": "Full scan + Python GROUP BY + sort + споделени ID-а",
       "sample": [
         {
-          "director": "Amy Scott",
-          "avg_rating": 8.67,
+          "director": "Suriyon Duangthongdee, Winai Wisetsiri",
+          "avg_rating": 8.31,
           "movie_count": 3
         },
         {
-          "director": "Alireza Keymanesh, Amir Pousti",
-          "avg_rating": 8.17,
+          "director": "Dean DeBlois",
+          "avg_rating": 7.74,
           "movie_count": 3
         },
         {
-          "director": "Amma Rajasekhar",
-          "avg_rating": 8.0,
+          "director": "David Yates",
+          "avg_rating": 7.73,
+          "movie_count": 9
+        },
+        {
+          "director": "Phil Lord, Christopher Miller",
+          "avg_rating": 7.64,
+          "movie_count": 4
+        },
+        {
+          "director": "Tom McGrath",
+          "avg_rating": 7.64,
           "movie_count": 3
         },
         {
-          "director": "Ahmed Saqr, Ramy Imam",
-          "avg_rating": 7.84,
-          "movie_count": 7
-        },
-        {
-          "director": "Aaron Woodley",
-          "avg_rating": 7.76,
-          "movie_count": 6
-        },
-        {
-          "director": "Alfie Sadler",
-          "avg_rating": 7.67,
+          "director": "Hiroyuki Seshita, Kobun Shizuno",
+          "avg_rating": 7.62,
           "movie_count": 3
         },
         {
-          "director": "Abby Tarpey",
-          "avg_rating": 7.53,
+          "director": "KJ Harvey",
+          "avg_rating": 7.6,
           "movie_count": 3
         },
         {
-          "director": "Aleksandr Strizhenov",
-          "avg_rating": 7.53,
+          "director": "Elizabeth Lo",
+          "avg_rating": 7.57,
           "movie_count": 3
         },
         {
-          "director": "Alec Mills",
-          "avg_rating": 7.43,
-          "movie_count": 3
+          "director": "Michaël R. Roskam",
+          "avg_rating": 7.57,
+          "movie_count": 4
         },
         {
-          "director": "Alix Delaporte",
-          "avg_rating": 7.33,
+          "director": "Vincent Ward",
+          "avg_rating": 7.57,
           "movie_count": 3
         }
       ]
     }
   ],
-  "total_execution_ms": 713522.89
+  "total_execution_ms": 2298277.12
 }

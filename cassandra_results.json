@@ -5,202 +5,201 @@
   "queries": [
     {
       "query": "Q1 — Филмови по жанр",
-      "genre": "Action",
-      "avg_ms": 1128.08,
-      "min_ms": 1080.93,
-      "max_ms": 1230.28,
-      "total_ms": 5640.39,
+      "param": "Action",
+      "avg_ms": 1334.58,
+      "min_ms": 620.9,
+      "max_ms": 1811.47,
+      "total_ms": 6672.91,
       "times": [
-        1094.87,
-        1100.98,
-        1230.28,
-        1133.32,
-        1080.93
+        1811.47,
+        1567.23,
+        1430.35,
+        1242.96,
+        620.9
       ],
-      "count": 997,
-      "note": "Fetch 50000 редови + Python filter (LIKE не е поддржан без secondary index)",
+      "count": 4695,
+      "note": "Partition key scan по genre + филтер по споделени ID-а",
       "sample": [
         {
-          "title": "The Lion Men",
-          "vote_average": 10.0,
-          "year": 2014,
-          "director": "Sergio Olhovich"
+          "title": "Zero Zone",
+          "vote_average": 8.800000190734863,
+          "year": 2020,
+          "director": "Christian Koch"
         },
         {
-          "title": "Pyar Ka Devta",
-          "vote_average": 10.0,
-          "year": 1990,
-          "director": "George Marshall"
+          "title": "Top Guns",
+          "vote_average": 8.699999809265137,
+          "year": 2011,
+          "director": "Marius Jiro Magracia"
         },
         {
-          "title": "Ang Panday",
-          "vote_average": 10.0,
-          "year": 2017,
-          "director": "Dustin Rikert"
+          "title": "WWE WrestleMania X-Seven",
+          "vote_average": 8.699999809265137,
+          "year": 2001,
+          "director": "Yuji Nakae"
         },
         {
-          "title": "Agnee",
-          "vote_average": 10.0,
-          "year": 1988,
-          "director": "Maz Jobrani"
+          "title": "WWE Wrestlemania XIX",
+          "vote_average": 8.600000381469727,
+          "year": 2003,
+          "director": "Alexandre Lehmann"
         },
         {
-          "title": "Everything from the Rubber",
-          "vote_average": 10.0,
-          "year": 2019,
-          "director": "Yudai Yamaguchi"
+          "title": "WWE Royal Rumble 2021",
+          "vote_average": 8.583000183105469,
+          "year": 2021,
+          "director": "Zane Oborenko"
         }
       ]
     },
     {
       "query": "Q2 — Филмови по година",
-      "year": 2015,
-      "avg_ms": 7917.16,
-      "min_ms": 6807.33,
-      "max_ms": 9134.04,
-      "total_ms": 39585.78,
+      "param": 2015,
+      "avg_ms": 6733.87,
+      "min_ms": 5097.9,
+      "max_ms": 11586.59,
+      "total_ms": 33669.36,
       "times": [
-        8505.4,
-        9134.04,
-        7696.24,
-        7442.77,
-        6807.33
+        11586.59,
+        6560.85,
+        5097.9,
+        5104.9,
+        5319.12
       ],
-      "count": 29362,
-      "note": "release_year не е PK → ALLOW FILTERING",
+      "count": 1886,
+      "note": "ALLOW FILTERING — release_year не е PK",
       "sample": [
         {
-          "title": "The Wiggles - Rock and Roll Preschool",
-          "vote_average": 10.0,
-          "director": "Giacomo Gex"
+          "title": "Scooby-Doo! and the Beach Beastie",
+          "vote_average": 8.899999618530273,
+          "director": "Julian Miranda"
         },
         {
-          "title": "One Happy Day",
-          "vote_average": 10.0,
-          "director": "Ric Machin"
+          "title": "Scooby-Doo! and KISS: Rock and Roll Mystery",
+          "vote_average": 8.093999862670898,
+          "director": "Gyula Macskássy"
         },
         {
-          "title": "Looney Tunes: Musical Masterpieces",
-          "vote_average": 10.0,
-          "director": "Ömür Atay"
+          "title": "The Last One and then We Go",
+          "vote_average": 7.900000095367432,
+          "director": "Andreas Dresen"
         },
         {
-          "title": "The Wiggles Meet The Orchestra",
-          "vote_average": 10.0,
-          "director": "Oilhack, Thomas Blanchard"
+          "title": "Yo-kai Watch: The Movie - The Great King Enma and the Five Tales, Meow!",
+          "vote_average": 7.620999813079834,
+          "director": "Tony Ching Siu-Tung"
         },
         {
-          "title": "Krippenwahn",
-          "vote_average": 10.0,
-          "director": "Lotte Reiniger"
+          "title": "Twinsters",
+          "vote_average": 7.379000186920166,
+          "director": "George Armitage"
         }
       ]
     },
     {
       "query": "Q3 — Филмови по јазик",
-      "lang": "fr",
-      "avg_ms": 6167.59,
-      "min_ms": 5855.92,
-      "max_ms": 6552.0,
-      "total_ms": 30837.95,
+      "param": "fr",
+      "avg_ms": 4816.67,
+      "min_ms": 4751.53,
+      "max_ms": 4917.22,
+      "total_ms": 24083.35,
       "times": [
-        6552.0,
-        6150.84,
-        5906.86,
-        6372.33,
-        5855.92
+        4917.22,
+        4751.53,
+        4843.22,
+        4815.05,
+        4756.33
       ],
-      "count": 50000,
-      "note": "original_language не е PK → ALLOW FILTERING",
+      "count": 3555,
+      "note": "ALLOW FILTERING — original_language не е PK",
       "sample": [
         {
-          "title": "Cathy Gauthier 100% Vache Folle",
-          "vote_average": 10.0,
-          "year": 2008
+          "title": "The Big Bad Fox and Other Tales",
+          "vote_average": 7.675000190734863,
+          "year": 2017
         },
         {
-          "title": "Les Schtroumpfs : Les fées et les elfes",
-          "vote_average": 10.0,
+          "title": "The Twelve Tasks of Asterix",
+          "vote_average": 7.395999908447266,
+          "year": 1976
+        },
+        {
+          "title": "Asterix & Obelix: Mission Cleopatra",
+          "vote_average": 7.376999855041504,
+          "year": 2002
+        },
+        {
+          "title": "Après moi le bonheur",
+          "vote_average": 7.376999855041504,
+          "year": 2016
+        },
+        {
+          "title": "Just Before Losing Everything",
+          "vote_average": 7.080999851226807,
           "year": 2013
-        },
-        {
-          "title": "Piaf, Hymnes à la Môme au Beacon Theatre, New York",
-          "vote_average": 10.0,
-          "year": 2013
-        },
-        {
-          "title": "Les Schtroumpfs - Coffret spécial anniversaire 50 ans",
-          "vote_average": 10.0,
-          "year": 2008
-        },
-        {
-          "title": "Le Système Ribadier",
-          "vote_average": 10.0,
-          "year": 2008
         }
       ]
     },
     {
       "query": "Q4 — Топ по жанр + рејтинг",
-      "genre": "Action",
-      "min_rating": 7.0,
-      "avg_ms": 132.46,
-      "min_ms": 98.35,
-      "max_ms": 177.77,
-      "total_ms": 662.3,
+      "param": "Action > 7.0",
+      "avg_ms": 89.0,
+      "min_ms": 82.44,
+      "max_ms": 97.68,
+      "total_ms": 445.02,
       "times": [
-        147.38,
-        177.77,
-        130.3,
-        108.5,
-        98.35
+        89.33,
+        82.44,
+        97.68,
+        88.63,
+        86.94
       ],
-      "count": 3146,
-      "note": "PK + CK query → целосно оптимизиран без ALLOW FILTERING",
+      "count": 727,
+      "note": "PK + CK → целосно оптимизиран, без ALLOW FILTERING",
       "sample": [
         {
-          "title": "Too Extreme for TV!",
-          "vote_average": 10.0,
-          "director": "Bruce Sweeney"
+          "title": "Zero Zone",
+          "vote_average": 8.800000190734863,
+          "director": "Christian Koch"
         },
         {
-          "title": "Sprout",
-          "vote_average": 10.0,
-          "director": "D.W. Griffith"
+          "title": "Top Guns",
+          "vote_average": 8.699999809265137,
+          "director": "Marius Jiro Magracia"
         },
         {
-          "title": "Hi-Speed Sex",
-          "vote_average": 10.0,
-          "director": "Catherine Morshead"
+          "title": "WWE WrestleMania X-Seven",
+          "vote_average": 8.699999809265137,
+          "director": "Yuji Nakae"
         },
         {
-          "title": "Criminal Minds",
-          "vote_average": 10.0,
-          "director": "Onur Tukel"
+          "title": "WWE Wrestlemania XIX",
+          "vote_average": 8.600000381469727,
+          "director": "Alexandre Lehmann"
         },
         {
-          "title": "Zero Woman: The Accused",
-          "vote_average": 10.0,
-          "director": "Jacques Baratier"
+          "title": "WWE Royal Rumble 2021",
+          "vote_average": 8.583000183105469,
+          "director": "Zane Oborenko"
         }
       ]
     },
     {
       "query": "Q5 — Режисер + сортирање",
-      "director": "Christopher Nolan",
-      "avg_ms": 14.13,
-      "min_ms": 9.48,
-      "max_ms": 17.05,
-      "total_ms": 70.66,
+      "param": "Christopher Nolan",
+      "avg_ms": 18.96,
+      "min_ms": 13.87,
+      "max_ms": 32.77,
+      "total_ms": 94.81,
       "times": [
-        9.48,
-        14.74,
-        17.05,
-        13.48,
-        15.9
+        32.77,
+        16.18,
+        16.64,
+        13.87,
+        15.35
       ],
-      "count": 148,
-      "note": "director е Partition Key, popularity CK DESC → pre-sorted, без ORDER BY",
+      "count": 22,
+      "note": "director е PK, popularity CK DESC → pre-sorted",
       "sample": [
         {
           "title": "Interstellar",
@@ -236,155 +235,153 @@
     },
     {
       "query": "Q6 — Статус + јазик (ALLOW FILTERING)",
-      "status": "Released",
-      "lang": "en",
-      "avg_ms": 1823.9,
-      "min_ms": 1355.21,
-      "max_ms": 2271.26,
-      "total_ms": 9119.52,
+      "param": "Released + en",
+      "avg_ms": 1193.83,
+      "min_ms": 1124.06,
+      "max_ms": 1268.25,
+      "total_ms": 5969.17,
       "times": [
-        1634.29,
-        2271.26,
-        1816.37,
-        2042.4,
-        1355.21
+        1268.25,
+        1124.06,
+        1185.27,
+        1229.96,
+        1161.62
       ],
-      "count": 50000,
-      "note": "ALLOW FILTERING → full scan → избегнувај во продукција!",
+      "count": 6408,
+      "note": "ALLOW FILTERING на 2 непартиционирани колони → full scan",
       "sample": [
         {
-          "title": "Baby Einstein: Baby MacDonald",
-          "vote_average": 10.0,
-          "year": 2004
+          "title": "What's New, Scooby-Doo? Vol. 5: Sports Spooktacular",
+          "vote_average": 9.899999618530273,
+          "year": 2005
         },
         {
-          "title": "Baby Einstein: Baby Bach - Musical Adventure",
-          "vote_average": 10.0,
-          "year": 1999
-        },
-        {
-          "title": "Wee Sing in Sillyville",
-          "vote_average": 10.0,
+          "title": "Mickey's Safety Club: Street Safe, Street Smart",
+          "vote_average": 9.472000122070312,
           "year": 1989
         },
         {
-          "title": "Rock 'N Learn: Alphabet",
-          "vote_average": 10.0,
-          "year": 1998
+          "title": "Home Run Showdown",
+          "vote_average": 9.281000137329102,
+          "year": 2012
         },
         {
-          "title": "1-2-3 Magic",
-          "vote_average": 10.0,
-          "year": 1990
+          "title": "Night of the Living Doo",
+          "vote_average": 9.071000099182129,
+          "year": 2001
+        },
+        {
+          "title": "Scooby-Doo! Mecha Mutt Menace",
+          "vote_average": 8.967000007629395,
+          "year": 2013
         }
       ]
     },
     {
       "query": "Q7 — Просечен буџет/приход по жанр",
-      "genre": "Drama",
-      "avg_ms": 985.24,
-      "min_ms": 897.19,
-      "max_ms": 1085.29,
-      "total_ms": 4926.18,
+      "param": "Drama",
+      "avg_ms": 764.54,
+      "min_ms": 724.53,
+      "max_ms": 816.76,
+      "total_ms": 3822.69,
       "times": [
-        1085.29,
-        986.86,
-        897.19,
-        1020.96,
-        935.89
+        816.76,
+        735.43,
+        724.53,
+        764.21,
+        781.76
       ],
-      "count": 723,
-      "avg_budget": 14470802.79,
-      "avg_revenue": 40867197.51,
-      "note": "Fetch 50000 редови + Python агрегација"
+      "count": 1887,
+      "avg_budget": 17249613.85,
+      "avg_revenue": 43412167.8,
+      "note": "Partition scan + Python агрегација, филтер по споделени ID-а"
     },
     {
       "query": "Q8 — Број по година и јазик",
-      "year": 2010,
-      "lang": "en",
-      "avg_ms": 6626.48,
-      "min_ms": 6300.85,
-      "max_ms": 6959.5,
-      "total_ms": 33132.42,
+      "param": "2010 + en",
+      "avg_ms": 5571.17,
+      "min_ms": 5256.7,
+      "max_ms": 6073.13,
+      "total_ms": 27855.87,
       "times": [
-        6639.16,
-        6604.7,
-        6959.5,
-        6628.21,
-        6300.85
+        5740.69,
+        6073.13,
+        5474.73,
+        5256.7,
+        5310.62
       ],
-      "count": 11486,
-      "note": "ALLOW FILTERING за двете колони кои не се PK"
+      "count": 747,
+      "note": "ALLOW FILTERING + филтер по споделени ID-а"
     },
     {
       "query": "Q9 — Топ режисери по рејтинг",
-      "top_n": 10,
-      "avg_ms": 1158.84,
-      "min_ms": 1055.66,
-      "max_ms": 1293.62,
-      "total_ms": 5794.22,
+      "param": "top 10, min 3",
+      "avg_ms": 839.07,
+      "min_ms": 739.9,
+      "max_ms": 1018.8,
+      "total_ms": 4195.36,
       "times": [
-        1055.66,
-        1085.74,
-        1293.62,
-        1067.6,
-        1291.6
+        903.74,
+        775.51,
+        739.9,
+        757.41,
+        1018.8
       ],
       "count": 10,
-      "note": "Fetch 50000 редови + Python GROUP BY + sort",
+      "note": "Fetch + Python GROUP BY + sort, филтер по споделени ID-а",
       "sample": [
         {
-          "director": "Zara Hayes, James Erskine",
-          "avg_rating": 9.1,
+          "director": "Dean DeBlois",
+          "avg_rating": 7.74,
           "movie_count": 3
         },
         {
-          "director": "Konstantin Kozlov",
-          "avg_rating": 9.07,
+          "director": "KJ Harvey",
+          "avg_rating": 7.6,
           "movie_count": 3
         },
         {
-          "director": "Jacqui Fifer",
-          "avg_rating": 8.33,
+          "director": "Meghna Gulzar",
+          "avg_rating": 7.37,
           "movie_count": 3
         },
         {
-          "director": "Lewis Fletcher",
-          "avg_rating": 8.3,
-          "movie_count": 3
-        },
-        {
-          "director": "Nicolás Tuozzo",
-          "avg_rating": 7.77,
-          "movie_count": 3
-        },
-        {
-          "director": "Brian Tse",
-          "avg_rating": 7.67,
-          "movie_count": 3
-        },
-        {
-          "director": "Suzanne Guacci",
-          "avg_rating": 7.67,
-          "movie_count": 3
-        },
-        {
-          "director": "James Bird",
-          "avg_rating": 7.66,
-          "movie_count": 3
-        },
-        {
-          "director": "Jacek Borcuch",
-          "avg_rating": 7.52,
-          "movie_count": 4
-        },
-        {
-          "director": "Jack Lee, J.B. Holmes",
+          "director": "Edwin J. Collins",
           "avg_rating": 7.36,
-          "movie_count": 4
+          "movie_count": 3
+        },
+        {
+          "director": "Rod Hardy",
+          "avg_rating": 7.25,
+          "movie_count": 3
+        },
+        {
+          "director": "Jon Jones",
+          "avg_rating": 7.2,
+          "movie_count": 3
+        },
+        {
+          "director": "Sam Mendes",
+          "avg_rating": 7.13,
+          "movie_count": 15
+        },
+        {
+          "director": "Cullen McFater",
+          "avg_rating": 7.12,
+          "movie_count": 3
+        },
+        {
+          "director": "Luis Llosa",
+          "avg_rating": 7.1,
+          "movie_count": 6
+        },
+        {
+          "director": "Sid Smith, Ron Field",
+          "avg_rating": 7.06,
+          "movie_count": 3
         }
       ]
     }
   ],
-  "total_execution_ms": 129827.67
+  "total_execution_ms": 106824.41
 }
